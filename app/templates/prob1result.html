@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<div class="container">
+    <h2> Problem 1 - Closest Stars </h2>
+   
+    {% if starID %} <h3>Closest to Star {{ starID }}</h3> {% endif %}
+        {% if results %}
+        <ul class="list-group"></ul> 
+        {% for result in results %}
+            <li class="list-group-item">{{ result[0] }} (Relative Distance: {{ result[1] }} )</li>
+        {% endfor %}   
+    </ul> 
+        {% endif %}
+       
+        </div>
+{% endblock %}
