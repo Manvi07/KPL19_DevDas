@@ -34,5 +34,6 @@ for index, row in df.iterrows():
 plt.xlabel('distance modulus')
 plt.ylabel('ratio of app vs real wavelength')
 plt.scatter(distMod, WaveRatio)
-plt.show()
+# plt.show()
+plt.savefig("plot.png")
 print('ID of intragalactic sources',extra)
