@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<div class="container">
+    <h2> Problem 2 - Stars within Milky Way </h2>
+        {% if results %}
+        <ul class="list-group"></ul> 
+        {% for result in results %}
+            <li class="list-group-item">{{ result }}</li>
+        {% endfor %}   
+    </ul> 
+        {% endif %}
+       
+    <img src="{{ url_for('static', filename='plot.png') }}">
+        </div>
+{% endblock %}

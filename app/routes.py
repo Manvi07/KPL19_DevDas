@@ -2,6 +2,7 @@ from flask import render_template, request
 from app import app
 from problem1 import Problem1
 from problem3 import Problem3
+from problem2 import Problem2
 import csv
 import math
 
@@ -23,3 +24,8 @@ def prob1():
 def prob3():
     results = Problem3()
     return render_template('prob3.html', results=results)
+
+@app.route('/prob2')
+def prob2():
+    results = Problem2()
+    return render_template('prob2.html', results=results)
