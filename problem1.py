@@ -9,6 +9,7 @@ ID = int(input("Star ID X: "))
 x = []
 y = []
 z = []
+starID = []
 
 soln = []
 rows = []
@@ -35,6 +36,7 @@ for row in csv_f:
     y.append(Y)
     Z = row[8]*math.cos(row[1])
     z.append(Z)
+    starID.append(row[0])
     if(int(row[0]) == ID):
         x1 = X
         y1 = Y
@@ -46,5 +48,9 @@ for row in range(len(x)):
     Z = (z1 - z[row])**2
     distance.append((math.sqrt(X+Y+Z)))
 
-distance.sort()
-print(distance)
+idDist = dict(zip(starID, distance))
+Starlist = sorted(idDist.items(), key=lambda x: x[1])
+
+print('five closest :')
+for i in Starlist[1:6]:
+    print(i[0],i[1])
