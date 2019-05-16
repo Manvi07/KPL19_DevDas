@@ -1,10 +1,9 @@
 from flask import render_template, request
 from app import app
 from problem1 import Problem1
-
+from problem3 import Problem3
 import csv
 import math
-
 
 
 @app.route('/')
@@ -20,3 +19,7 @@ def prob1():
         return render_template('prob1result.html', results=starlist, starID=starID)
     return render_template('prob1.html')
     
+@app.route('/prob3')
+def prob3():
+    results = Problem3()
+    return render_template('prob3.html', results=results)

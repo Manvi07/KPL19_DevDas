@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<div class="container">
+    <h2> Problem 3 - Stars now visible </h2>
+        {% if results %}
+        <ul class="list-group"></ul> 
+        {% for result in results %}
+            <li class="list-group-item">{{ result[0] }}</li>
+        {% endfor %}   
+    </ul> 
+        {% endif %}
+       
+        </div>
+{% endblock %}
