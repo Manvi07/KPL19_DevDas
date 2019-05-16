@@ -19,7 +19,7 @@ y1 = 0
 z1 = 0
 
 header = next(csv_f)
-
+nan = []
 distance = []
 
 for row in csv_f:
@@ -28,6 +28,7 @@ for row in csv_f:
     row[2] = math.degrees(float(row[2]))
     row[8] = float(row[8])
     if(math.isnan(row[8])):
+        nan.append(int(row[0]))
         continue
     # row[8] = 10**((row[8]+5)//5)
     X = (row[8]*(math.sin(row[1]))*(math.cos(row[2])))
@@ -42,6 +43,10 @@ for row in csv_f:
         y1 = Y
         z1 = Z
 
+if ID > 274 or ID in nan:
+    print("Out of bound or could not be calculated!")
+    exit()
+ 
 for row in range(len(x)):
     X = (x1 - x[row])**2
     Y = (y1 - y[row])**2
